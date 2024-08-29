@@ -1,9 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 
-    <h1>Our pizzas! Tasty and delicious</h1>
+    <!--<h1>Our pizzas! Tasty and delicious</h1>
     <ul>
         {% for i in all_pizza %}
-            <li>{{ i.name }}
+            <li>
+                <a href="/{{ i.name_slug }}">{{ i.name }}</a>
                 <div>
                 <mark>Ingredients</mark>
                 </div>
@@ -33,24 +36,25 @@
         {% endfor %}
         <input type="submit" class="order" value="place order">
     </form>
-    <button class="more">add more pizza </button>
+    <button class="more">add more pizza </button>-->
+    {% crispy order_form %}
 {% endblock %}
 <script>
-    let pizza = document.querySelector('.pizzas')
-    let order = document.querySelector('.order')
-    let more = document.querySelector('.more')
-    let form = document.querySelector('.form')
-
-    more.addEventListener('click', (e) => {
-        e.preventDefault()
-        p = document.createElement('p')
-        l = document.createElement('label')
-        l.setAttribute('for', 'id_choice')
-        l.textContent = 'Choice:'
-        cloned = pizza.cloneNode(true)
-        p.append(l)
-        p.append(cloned)
-        form.insertBefore(p, order)
-    })
-
+//    let pizza = document.querySelector('.pizzas')
+//    let order = document.querySelector('.order')
+//    let more = document.querySelector('.more')
+//    let form = document.querySelector('.form')
+//
+//    more.addEventListener('click', (e) => {
+//        e.preventDefault()
+//        p = document.createElement('p')
+//        l = document.createElement('label')
+//        l.setAttribute('for', 'id_choice')
+//        l.textContent = 'Choice:'
+//        cloned = pizza.cloneNode(true)
+//        p.append(l)
+//        p.append(cloned)
+//        form.insertBefore(p, order)
+//    })
+//
 </script>

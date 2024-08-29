@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'pizza',
     'order',
     'debug_toolbar',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,7 @@ INTERNAL_IPS = [
 DEBUG_TOOLBAR_CONFIG = {
     'RENDER_PANELS': True
 }
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"

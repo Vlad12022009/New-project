@@ -1,9 +1,10 @@
 from django.contrib import admin
-from .models import PizzaModel, ToppingsModel, PizzaProxy
+from .models import PizzaModel, ToppingsModel#, PizzaProxy
+
 # Register your models here.
 
-class PizzaInline(admin.StackedInline):
-    model = PizzaProxy
+class PizzaInline(admin.TabularInline):
+    model = PizzaModel.toppings.through
     extra = 0
     verbose_name = 'topping'
     verbose_name_plural = 'Create new pizza recipe'

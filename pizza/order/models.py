@@ -27,9 +27,9 @@ class OrderModel(models.Model):
         order_pizza = [i.name for i in self.pizza_order.all()]
         return f'Address: {self.addres}, Order: {", ".join(order_pizza)}'
     
-class OrderProxy(OrderModel.pizza_order.through):
-    class Meta:
-        proxy = True
-     
-    def __str__(self):
-        return str(self.ordermodel)
+#class OrderProxy(OrderModel.pizza_order.through):
+#    class Meta:
+#        proxy = True
+#     
+#    def __str__(self):
+#        return str(self.ordermodel)

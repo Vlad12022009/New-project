@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import OrderModel, OrderProxy
+from .models import OrderModel#, OrderProxy
 from django.contrib import messages
 from django.utils.translation import ngettext
 #@admin.action(description='Set orders to delivered status')
@@ -8,7 +8,7 @@ from django.utils.translation import ngettext
 
 
 class OrderInline(admin.TabularInline):
-    model = OrderProxy
+    model = OrderModel.pizza_order.through
     verbose_name = 'order'
     verbose_name_plural = 'Create order'
     extra = 0

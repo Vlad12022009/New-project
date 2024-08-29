@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from features.views import index
 from order.views import create_order, create_model_order
+from pizza.views import pizza_detail_view
 import debug_toolbar
 
 urlpatterns = [
@@ -24,5 +25,6 @@ urlpatterns = [
     path('', index),
     path('createorder/', create_order, name='createorder'),
     path('createmodelorder/', create_model_order, name='createmodelorder'),
+    path('<slug:slug>', pizza_detail_view, name='pizza_detail'),
     path('__debug__/', include(debug_toolbar.urls)),
 ]
